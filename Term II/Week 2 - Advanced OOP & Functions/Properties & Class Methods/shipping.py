@@ -5,11 +5,27 @@ class ShippingContainer:
 # checkpoint 2
 # work on terminal
    
-    @staticmethod
-    def _get_next_serial():
-        result = ShippingContainer.next_serial
-        ShippingContainer.next_serial += 1
+    # @staticmethod
+    # def _get_next_serial():
+    #     result = ShippingContainer.next_serial
+    #     ShippingContainer.next_serial += 1
+    #     return result
+    
+# checkpoint 3
+    @classmethod
+    def _get_next_serial(cls):
+        result = cls.next_serial
+        cls.next_serial += 1
         return result
+    
+    @classmethod
+    def create_empty(cls, owner_code):
+        return cls(owner_code, contents=None)
+    
+    @classmethod
+    def create_with_items(cls, owner_code, items):
+        return cls(owner_code, contents=list(items))
+    
     
  # Part 1   
     def __ini__(self, owner_code, contents):
