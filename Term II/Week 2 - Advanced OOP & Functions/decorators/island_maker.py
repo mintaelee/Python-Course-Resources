@@ -16,7 +16,7 @@ class Trace:
             return m(*args, **kwargs)
         return wrap
     
-tracer = tracer()
+tracer = Trace()
 
 @tracer
 @escape_unicode
