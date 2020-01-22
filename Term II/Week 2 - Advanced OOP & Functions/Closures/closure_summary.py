@@ -1,0 +1,1 @@
+# Let's examine that concept of a cell to create an indirect reference for variables that are in multiple scopes.
