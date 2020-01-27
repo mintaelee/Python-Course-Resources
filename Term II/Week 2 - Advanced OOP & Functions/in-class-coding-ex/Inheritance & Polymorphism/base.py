@@ -9,20 +9,18 @@ class Base:
         print('Base.f()')
 
 
+# class Sub(Base):
+#     pass
+
+# class Sub(Base):
+#     def f(self):
+#         print('Sub.f()')
+
+# Subclass initializers
+
 class Sub(Base):
-    pass
-
-# class Sub(Base):
-#     def f(self):
-#         print('Sub.f()')
-
-
-
-# # Subclass initializers
-
-# class Sub(Base):
-#     def __init__(self):
-#         print('Sub initializer')
+    def __init__(self):
+        print('Sub initializer')
         
-#     def f(self):
-#         print('Sub.f()')
+    def f(self):
+        print('Sub.f()')
