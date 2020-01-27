@@ -1,4 +1,4 @@
-<h1> Design and implement a class that will be used to represent bank accounts.
+<h1> Design and implement a class that will be used to represent bank accounts.<h1>
 
 We will construct the following basic functionalities.
 
