@@ -1,2 +1,2 @@
-# CI-Python-Course-Resources
+# Python-Course-Resources
 Repository For Python Courses
