@@ -1,4 +1,4 @@
-# This is a SAMPLE adaptation of the actal code used for this module; therefore, it is subject to changed dramatically!!!
+# This is a SAMPLE adaptation of the actal code used for this module; therefore, it is subject to change dramatically!!!
 
 from flask import Flask, jsonify
 from flask_restful import Api
