@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 stores = [{
     'name': 'My Store',
-    'items': [{'name':'my item', 'price': 15.99 }]
+    'items': [{'name':'Toy-Store', 
+               'price': 5.99 }]
 }]
 
 @app.route('/')
@@ -25,7 +26,7 @@ def get_store(name):
   for store in stores:
     if store['name'] == name:
           return jsonify(store)
-  return jsonify ({'message': 'store not found'})
+  return jsonify ({'message': 'store does not exist'})
 
 
 @app.route('/store')
@@ -48,8 +49,8 @@ def create_item_in_store(name):
 def get_item_in_store(name):
   for store in stores:
     if store['name'] == name:
-        return jsonify( {'items':store['items']})
-  return jsonify ({'message':'store not found'})
+        return jsonify({'items': store['items']})
+  return jsonify ({'message':'store does not exist'})
   #pass
 
 
