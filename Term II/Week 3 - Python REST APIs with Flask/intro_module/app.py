@@ -2,17 +2,16 @@ from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
-stores = 
-[{
-    'name': 'My Store',
-    'items': [{'name':'my item', 'price': 15.99 }]
+stores = [{
+    'name': 'Toy-Store',
+    'items': [{'name': 'Plush', 
+               'price': 5.99 }]
 }]
 
 @app.route('/')
 def home():
   return render_template('index.html')
 
-#post /store data: {name :}
 
 @app.route('/store' , methods=['POST'])
 def create_store():
@@ -20,27 +19,20 @@ def create_store():
   new_store = {'name':request_data['name'], 'items':[]}
   stores.append(new_store)
   return jsonify(new_store)
-  #pass
 
-#get /store/<name> data: {name :}
 
 @app.route('/store/<string:name>')
 def get_store(name):
   for store in stores:
     if store['name'] == name:
           return jsonify(store)
-  return jsonify ({'message': 'store not found'})
-  #pass
+  return jsonify ({'message': 'store does not exist'})
 
-
-#get /store
 
 @app.route('/store')
 def get_stores():
   return jsonify({'stores': stores})
-  #pass
 
-#post /store/<name> data: {name :}
 
 @app.route('/store/<string:name>/item' , methods=['POST'])
 def create_item_in_store(name):
@@ -50,19 +42,15 @@ def create_item_in_store(name):
         new_item = {'name': request_data['name'], 'price': request_data['price']}
         store['items'].append(new_item)
         return jsonify(new_item)
-  return jsonify ({'message' :'store not found'})
-  #pass
+  return jsonify ({'message' :'store does not exist'})
 
-
-
-#get /store/<name>/item data: {name :}
 
 @app.route('/store/<string:name>/item')
 def get_item_in_store(name):
   for store in stores:
     if store['name'] == name:
-        return jsonify( {'items':store['items']})
-  return jsonify ({'message':'store not found'})
+        return jsonify({'items': store['items']})
+  return jsonify ({'message':'store does not exist'})
   #pass
 
 
