@@ -14,6 +14,7 @@ class UserRegister(Resource):
             return {"message": "A user with that username already exists"}, 400
 
         user = UserModel(data['username'], data['password'])
+        #user = UserModel(**data)
         user.save_to_db()
 
         return {"message": "User created successfully."}, 201
